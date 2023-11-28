@@ -1,0 +1,1942 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* navbar section */
+.navbar {
+  box-shadow: 0 15px 40px -20px rgb(40 44 63 / 15%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #fff;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.navbar .nav {
+  max-width: 1200px;
+  min-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .left .logo {
+  display: block;
+  height: 49px;
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  margin-right: 16px;
+}
+
+.navbar .left .logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar .location-div,
+.other {
+  position: relative;
+}
+
+.navbar .location-div {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  max-width: 300px;
+  height: 30px;
+  cursor: pointer;
+  margin-bottom: -1px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.navbar .right {
+  position: relative;
+}
+
+.location-div .other {
+  font-weight: 700;
+  color: #3d4152;
+  float: left;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #3d4152;
+}
+
+.location-div .other:hover {
+  color: #fc8019;
+  border-bottom: 2px solid #fc8019;
+}
+
+.location-div .location {
+  display: block;
+  font-weight: 300;
+  padding-left: 5px;
+  margin-left: 5px;
+  color: #686b78;
+}
+
+.location-div .arrow-down {
+  position: absolute;
+  right: -6%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #fc8019;
+  font-weight: 700;
+}
+
+.right .items {
+  display: flex;
+  align-items: center;
+}
+
+.right .items li {
+  margin-right: 36px;
+  color: #3d4152;
+  font-size: 16px;
+  font-weight: 500;
+  list-style-type: none;
+}
+
+.right .items .nav-item {
+  display: flex;
+  align-items: center;
+  padding-left: 28px;
+  position: relative;
+  height: 80px;
+  cursor: pointer;
+}
+
+.right .items .nav-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #3d4152;
+  font-size: 16px;
+}
+
+.nav-item a:hover {
+  color: #fc8019;
+}
+
+.nav-item a span {
+  padding-left: 11px;
+}
+
+.right .items li:last-child a svg {
+  color: #60b246;
+}
+
+/* Content Section */
+.restaurants .container {
+  max-width: 1200px;
+  min-width: 1350px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 42px;
+  top: 80px;
+  background: #fff;
+  left: 31px;
+}
+
+.container .item-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .item-bar .number {
+  font-weight: 600;
+  font-size: 28px;
+  color: #282c3f;
+  margin-top: -3px;
+}
+
+.container .item-bar::after {
+  color: #3d4152;
+  position: absolute;
+  /* content: ''; */
+  left: 0;
+  right: 0;
+  height: 1px;
+  top: 81px;
+  background: #e9e9eb;
+}
+
+.container .item-bar .filters {
+  display: flex;
+  align-items: center;
+}
+
+.container .item-bar .filters div {
+  font-size: 16px;
+  font-weight: 300;
+  color: #686b78;
+  margin-left: 35px;
+  cursor: pointer;
+  position: relative;
+}
+
+.filters div:hover::after {
+  color: #3d4152;
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  height: 1px;
+  top: 31px;
+  background: #282c3f;
+}
+
+.restaurant-list {
+  margin-bottom: 85px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  justify-content: space-between;
+  padding-top: 39px;
+  margin-top: 25px;
+}
+
+.restaurant-list .place-link {
+  background: #fff;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.restaurant-list .list-item {
+  padding: 25px 25px 57px;
+  border: 1px solid #fff;
+  contain: content;
+}
+
+.restaurant-list .list-item:hover {
+  border-color: #d3d5df;
+  box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+}
+
+.restaurant-list .item-content {
+  width: 254px;
+  position: relative;
+}
+
+.top-img {
+  background: #eef0f5;
+  width: 254px;
+  height: 160px;
+  position: relative;
+}
+
+.top-img img {
+  opacity: 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.status {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 9px 4px;
+  max-width: 50%;
+  text-transform: uppercase;
+}
+
+.status::before {
+  position: absolute;
+  bottom: -9px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: inherit;
+  left: 0;
+  border-width: 9px 0 0 9px;
+}
+
+.place-name-div {
+  margin-top: 14px;
+}
+
+.place-name-div .name {
+  font-size: 17px;
+  font-weight: 500;
+  /* to bring text in next line */
+  word-break: break-word;
+}
+
+.place-name-div .food-items {
+  color: #686b78;
+  font-size: 13px;
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+.info-div {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 12px;
+  justify-content: space-between;
+  color: #535665;
+  font-weight: 300;
+}
+
+.info-div .rating {
+  background-color: #db7c38;
+  color: #fff;
+  height: 20px;
+  width: 36px;
+  padding: 0 5px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.icon-star {
+  font-size: 10px;
+  margin-right: 4px;
+  position: relative;
+  top: -1px;
+}
+
+.offer-div {
+  border-top: 1px solid #e9e9eb;
+  padding-top: 14px;
+  margin-top: 14px;
+  color: #8a584b;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.offer-div .icon-offer-filled {
+  font-size: 16px;
+  width: 20px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.offer-div .offer-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.offer-text .fa-tags {
+  margin-right: 2px;
+}
+
+.place:hover .quick-view {
+  visibility: visible !important;
+}
+
+.quick-view {
+  color: #686b78;
+  font-size: 13px;
+  visibility: hidden;
+  border-top: 1px solid #e9e9eb;
+  padding-top: 14px;
+  margin-top: 14px;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 14px;
+}
+
+.quick-view .view-btn {
+  color: #5d8ed5;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Footer Section */
+.footer {
+  /* padding: 0 20px; */
+  z-index: 10;
+  background-color: #000;
+  min-height: 298px;
+  width: 100%;
+  color: #fff;
+  overflow: scroll;
+}
+
+.footer-content {
+  width: 100%;
+  display: flex;
+  background-color: #000000;
+  justify-content: space-around;
+  max-width: 1200px;
+  min-width: 1200px;
+  margin: 0 auto;
+  padding: 76px 0;
+  height: 100%;
+}
+
+.points {
+  color: #808080;
+  font-size: 15px;
+  font-weight: 600;
+  /*    border: 1px solid white;*/
+  width: 300px;
+  margin: 26px 0px 10px 15px;
+  /*    padding: 15px 0px 0px 0px;*/
+}
+
+.footer-li {
+  padding: 20px 10px 2px 0px;
+}
+
+.footer-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-li a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.footer-li a:hover {
+  font-weight: 600;
+}
+
+.points img {
+  border: 2px solid #808080;
+  padding: 10px;
+  margin: 30px 0px 10px 57px;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.points img:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+}
+
+/* Shimmer Animation */
+.shimmer-card {
+  display: flex;
+  background: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shimmer-card::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f4f4f4 25%, #e4e4e4 50%, #f4f4f4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Shimmer Image Placeholder */
+.shimmer-img {
+  width: 160px;
+  height: 160px;
+}
+
+/* Shimmer Text Placeholder */
+.shimmer-text {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+/* Shimmer Offer Placeholder */
+.shimmer-offer {
+  width: 160px;
+  height: 20px;
+  margin-top: 8px;
+}
+
+/* Add other specific styling as needed */
+
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+} */
+
+/* .container {
+  max-width: 800px;
+  margin: 5rem auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #93959f;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs span:hover::after {
+  display: flex;
+  cursor: pointer;
+}
+
+.breadcrumbs span {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+}
+
+.actions .heart-icon,
+.actions .search-icon {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.restaurant-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-right: 200px;
+}
+
+.restaurant-details {
+  width: 70%;
+}
+
+.restaurant-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #282c3f;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.cuisines,
+.location {
+  font-size: 14px;
+  color: #93959f;
+}
+
+.ratings {
+  width: 30%;
+}
+
+.rating-button {
+  border: 1px solid #e9e9eb;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.rating {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3d9b6d;
+}
+
+.total-ratings {
+  font-size: 14px;
+  font-weight: bold;
+  color: #8b8d97;
+}
+
+.divider {
+  border: 1px dashed #e9e9eb;
+  margin: 2rem 0;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.time-icon,
+.cost-icon {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.delivery-time,
+.cost-for-two {
+  display: flex;
+  align-items: center;
+}
+
+.delivery,
+.cost {
+  font-size: 16px;
+  font-weight: bold;
+  color: #3e4152;
+}
+
+.discounts {
+  font-size: 14px;
+  margin-top: 2rem;
+}
+
+/* .discounts p {
+  margin: 5px 0;
+} */
+.discounts {
+  font-size: 14px;
+  margin-top: 2rem;
+}
+
+.discounts p {
+  display: inline;
+  /* or inline-block if you want to add spacing between items */
+  margin-right: 200px;
+  /* Add margin for spacing between items */
+}
+
+/* Add more styles as needed */
+
+/* Basic styling, you can expand and customize this further */
+
+/* .container {
+  padding: 1rem;
+}
+
+.toggle-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.arrow-up,
+.arrow-down {
+  font-size: 20px;
+}
+
+.menu-item {
+  display: none;
+  border: 1px solid #d4d5d9;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.menu-item-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #3e4152;
+}
+
+.menu-item-price {
+  font-size: 14px;
+  font-weight: normal;
+  color: #3e4152;
+  margin-right: 1rem;
+}
+
+.menu-item-description {
+  font-size: 14px;
+  color: #282c3f73;
+  margin-top: 0.5rem;
+  max-width: 300px;
+}
+
+.menu-item-image img {
+  width: 118px;
+  height: 100px;
+  border: 1px solid #d4d5d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-button {
+  position: relative;
+  width: 100px;
+  padding: 0.5rem;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid #d4d5d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #60b246;
+  cursor: pointer;
+  margin-top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Toggle menu item display when the button is clicked */
+/* .toggle-button:focus + .menu-item {
+  display: block;
+} */
+/******************************** restaurant menu page ********************************/
+/* Styles for the overall restaurant page */
+
+
+/* Styles for the overall restaurant page */
+.restaurant-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Styles for the restaurant info section */
+.restaurant-page .restaurant-info {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.restaurant-page .restaurant-image {
+  flex: 1;
+  /* max-width: 150px; */
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.restaurant-page .restaurant-details {
+  flex: 2;
+  text-align: left;
+}
+
+/* Rest of the CSS for restaurant details and menu stays the same */
+
+
+.restaurant-page .restaurant-name {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.restaurant-page .restaurant-rating,
+.restaurant-page .restaurant-ratings,
+.restaurant-page .restaurant-delivery-time,
+.restaurant-page .restaurant-cuisines,
+.restaurant-page .restaurant-cost,
+.restaurant-page .restaurant-address,
+.restaurant-page .restaurant-phone,
+.restaurant-page .restaurant-hours {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Styles for the restaurant menu section */
+.restaurant-page .restaurant-menu {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+}
+
+.restaurant-image img {
+  height: 230px;
+  width: 300px;
+}
+
+.restaurant-page .menu-heading {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.restaurant-page .menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.restaurant-page .menu-item {
+  display: flex;
+  margin: 10px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.restaurant-page .menu-item-image {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+.restaurant-page .menu-item-details {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+  margin-left: 14px;
+}
+
+.restaurant-page .item-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.restaurant-page .item-description {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.restaurant-page .item-price {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #ff5733;
+}
+
+/********************************************************/
+.orderNow-button {
+  text-align: center;
+  margin: 13px 0px;
+}
+
+.orderNow-button button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #fc6730;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 18px;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
+}
+
+/*************************Back Button*******************************/
+
+.previous {
+  color: #fff;
+  background-color: #ff5733;
+  padding: 11px 48px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.previous:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/*                ABOUT CONTAINER                 */
+/* Apply styles to the container of the text */
+.about-text-container {
+  text-align: center;
+
+  padding: 20px;
+
+}
+
+/* Style the first line of text */
+.about-text-line {
+  font-size: 20px;
+  /* Adjust the font size as needed */
+  font-family: 'Montserrat', sans-serif;
+  /* Use your desired font family */
+  color: #46423e;
+  /* Set the text color */
+  margin: 10px 0;
+}
+
+.about-belong-text {
+  font-size: 40px;
+  color: #ff5733;
+}
+
+/* Style the text "Where Do You Belong?" with "Belong" in bold */
+.about-belong-text-line {
+  font-size: 38px;
+  /* Adjust the font size as needed */
+  color: #333;
+  /* Text color */
+  margin: 10px 0;
+  /* Add spacing above and below the text */
+}
+
+/* Apply the "Montserrat" font family to "Where Do You" */
+.montserrat-text {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Apply the "Pacifico" font family to "Belong" and make it bold */
+.pacifico-bold {
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+  color: #3c3838;
+}
+
+.about-swiggy-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-item {
+  width: 30%;
+  /* Adjust this value to control the width of columns */
+  /* margin: 3px; */
+  background-color: #ffffff;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.img-container {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.mission-container {
+  margin: 0;
+  padding: 0;
+  background-color: #f3752c;
+  /* Orange background color */
+  font-family: 'Dancing Script', Arial, sans-serif;
+  color: #fff;
+  /* White text color */
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 40vh;
+}
+
+.mission-container .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.mission-container p {
+  font-size: 40px;
+  line-height: 1.5;
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+}
+
+.Add-button {
+  margin: 30px 55px 16px 200px;
+  /* width: 100px; */
+  padding: 10px 10px;
+  width: 80px;
+  height: max-content;
+  border-color: coral;
+  border-radius: 10px;
+  /* background-color: #10d1eb */
+}
+
+.faq {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding: 0;
+}
+
+.answer {
+  display: none;
+  margin-top: 10px;
+}
+
+.answer.active {
+  display: block;
+}
+
+
+
+/******** Add Button ********************************/
+.button-counter {
+  text-align: center;
+  margin: 20px;
+}
+
+.button-counter button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #0077b6;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 18px;
+  font-size: 13px;
+  transition: background-color .3s;
+  font-weight: bold;
+}
+
+.button-counter button:hover {
+  background-color: #005a98;
+}
+
+.button-counter .counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-counter .counter button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #0077b6;
+  border: none;
+  border-radius: 4px;
+  margin: 0 10px;
+  padding: 3px 10px;
+  font-size: 18px;
+  transition: background-color .3s;
+}
+
+.button-counter .counter button:hover {
+  background-color: #005a98;
+}
+
+.button-counter .counter span {
+  font-size: 17px;
+}
+
+
+.detail-add-button {
+  margin: 28px 15px 11px 11px;
+  width: 50px;
+  height: 30px;
+  border-color: coral;
+  border-radius: 10px;
+}
+
+
+.cart-page {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.clear-cart-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.clear-cart-button {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart-item {
+  display: flex;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cart-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item-price {
+  font-size: 16px;
+  color: #333;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-button {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.item-count {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.total-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.proceed-to-payment-button {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.payment-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.payment-content {
+  background-color: #fff;
+  padding: 45px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.payment-amount {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.pay-button {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.close-button {
+  background-color: #ddd;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.order-placed-message {
+  position: fixed;
+  top: 50%;
+  left: 33%;
+  /* transform: translate(-50%, -50%); */
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  /* Adds a strong background blur effect */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 999;
+  font-size: 36px;
+  font-family: 'YourUniqueFont', sans-serif;
+  color: #ff5733;
+  transition: all 0.3s;
+}
+
+.order-placed-message:hover {
+  transform: scale(1.05);
+  /* Slightly zoom in on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Add a unique background image or pattern */
+.order-placed-message::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: url('your-background-image.jpg') center/cover no-repeat;  */
+  /* Replace with your background image */
+  opacity: 0.2;
+  /* Adjust the opacity as needed */
+  z-index: -1;
+}
+
+
+/* YourCartIsEmpty.css */
+
+.empty-cart-container {
+  /* height: calc(100vh - 80px); */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+}
+
+.empty-cart-message {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.empty-cart-icon {
+  width: 271px;
+  height: 256px;
+  background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.empty-cart-title {
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #535665;
+}
+
+.empty-cart-subtitle {
+  margin-top: 8px;
+  color: #7e808c;
+}
+
+
+
+.see-restaurants-button {
+  margin-top: 30px;
+  padding: 11px 20px;
+  text-transform: uppercase;
+  background-color: #fc8019;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform .8s cubic-bezier(.2, 1, .2, 1);
+}
+
+
+/* LocationComponent.css */
+
+.location-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-text {
+  cursor: pointer;
+
+  color: #535665;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+  transition: color 0.2s;
+  font-size: 14px;
+}
+
+.location-text:hover {
+  color: #ff7f00;
+}
+
+.location-slider {
+  width: 400px;
+  /* Full width */
+  height: 100vh;
+  /* Full height */
+  background-color: #fff;
+  position: fixed;
+  /* Fixed position to cover the entire viewport */
+  top: 0;
+  left: -100%;
+  /* Initially off-screen to the left */
+  z-index: 1000;
+  transition: left 0.3s ease-in;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  /* Add any other styles for the slider bar here */
+}
+
+.location-slider.active {
+  left: 0;
+  /* Slide it in when active class is applied */
+}
+
+.close-button {
+  margin-left: auto;
+  /* Push the button to the right */
+  /* font-size: 24px; */
+  /* Adjust the font size as needed */
+  color: #ff7f00;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* LocationComponent.css */
+
+.input-container {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Box shadow style */
+  padding: 10px;
+  /* Adjust padding as needed */
+  border-radius: 8px;
+  /* Adjust border radius as needed */
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+/* Rest of the CSS remains the same */
+.slider-container {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+/* LocationPopup.css */
+
+.popup-container {
+  background-color: #fff;
+  border: 1px solid #000;
+  width: 33.33%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  max-width: 375px;
+  border: 1px solid #000;
+  display: none;
+}
+
+.popup-container.active {
+  display: block;
+}
+
+.m-10 {
+  margin: 1.25rem;
+}
+
+.close-button {
+  cursor: pointer;
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.input-container {
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 100%;
+}
+
+.location-input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.locations-list {
+  margin-top: 1rem;
+}
+
+.location-item {
+  cursor: pointer;
+}
+
+.location-details {
+  display: flex;
+  align-items: center;
+}
+
+.location-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+}
+
+.location-info {
+  margin-left: 0.5rem;
+}
+
+.location-name {
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hover-text-orange-500:hover {
+  color: #fc8019;
+}
+
+.location-address {
+  font-size: 0.875rem;
+  color: #7e808c;
+}
+
+.separator {
+  height: 0.125rem;
+  background-color: #d1d5db;
+  margin-top: 0.375rem;
+}
+
+/* UserProfile.css */
+
+.user-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -400px;
+}
+
+.user-profile-card {
+  background-color: #d1d5db;
+  padding: 1rem;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile-image {
+  border-radius: 50%;
+  width: 40%;
+  margin: auto;
+}
+
+.user-profile-details {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.user-profile-name {
+  font-weight: bold;
+}
+
+.user-profile-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.user-profile-link {
+  margin-right: 1rem;
+}
+
+.user-profile-link-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/**************************** home page crousal ****************************/
+.image-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  justify-content: space-between;
+}
+
+.image-scroll-container .image-item {
+  flex-shrink: 0;
+  margin: 1rem;
+  transition: transform 0.3s, opacity 0.3s;
+  position: relative;
+}
+
+.image-scroll-container .image-item:hover {
+  transform: scale(1.05);
+  opacity: 0.7;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.image-scroll-container .image-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.image-scroll-container .image-item img {
+  width: 144px;
+  height: 180px;
+}
+
+/*---------------- home page top slider --------------------/
+
+
+
+/* CSS classes to style the image row and items */
+.image-row-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  /* Add some padding if needed */
+  justify-content: space-between;
+}
+
+.image-row-container .image-item {
+  flex-shrink: 0;
+  margin-right: 10px;
+  /* Add margin to separate images */
+  position: relative;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.image-row-container .image-item:hover {
+  transform: scale(1.05);
+  opacity: 0.7;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.image-row-container .image-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.image-row-container .image-item img {
+  width: 425px;
+  height: 252px;
+  object-fit: cover;
+  /* Maintain aspect ratio and cover container */
+}
+
+/* Optional: Add hover effect or other custom styles */
+
+.res-header {
+
+  text-align: left;
+
+  color: #333;
+
+  border-bottom: 1px solid gray;
+
+  margin-top: 29px;
+
+  margin-bottom: 21px;
+
+  padding-bottom: 19px;
+
+  font-size: 26px;
+
+  font-weight: bold;
+
+}
+
+/* AutocompleteLocations.css */
+
+/* AutocompleteLocations.css */
+
+.autocomplete-locations-container {
+  margin-top: 20px;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.autocomplete-location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.icon-location {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #ff6600;
+}
+
+.location-details {
+  flex: 1;
+}
+
+.location-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.location-address {
+  font-size: 14px;
+  color: #666;
+}
+
+
+span.locationLabel {
+  font-size: 14px;
+  margin-right: 5px;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 8px;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: #535665;;
+}
+span.locationLabel:hover{
+  color: orange;
+}
+.termsContainer{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.termsContainer h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.termsContainer p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.termsContainer .section {
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.Cross-btn {
+  width: 100%;
+  text-align: right;
+}
+
+/* Accordion Container */
+.accordion {
+  /* width: 100%;
+  max-width: 400px; */
+  margin: 0 auto;
+  padding: 100px;
+  flex: 1;
+  /* min-height: 80vh; */
+  
+}
+
+/* Accordion Item */
+.accordion-item {
+  /* border-bottom: 1px solid #ddd; */
+  border-bottom: 1px solid #d4d5d9;
+  /* overflow: hidden; */
+}
+
+/* Accordion Question */
+.accordion-question {
+  background-color: #f2f2f2;
+  background: transparent;
+  color: #333;
+  /* align-items: left; */
+  padding: 20px 0 26px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.accordion-question:hover {
+  background-color: #ddd;
+  color: #555;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Active Question (when expanded) */
+.accordion-question.active {
+  background-color: #f78b2d;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Accordion Answer */
+.accordion-answer {
+  background-color: #fff;
+  color: #333;
+  padding: 15px;
+  display: none;
+}
+
+.accordion-answer.show {
+  display: block;
+  animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.MayIhelp {
+  font-size: 26px;
+  font-weight: bold;
+  color: coral;
+  text-align: left;
+}
+
+
+.particle-wrapper {
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+}
+.payment-container {
+  background-color: #f3f4f6;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-container .content {
+  background-color: #fff;
+  padding: 4rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 800px;
+
+}
+
+.payment-container .icon {
+  font-size: 11rem;
+  color: #48bb78; /* Green color */
+  margin-bottom: 1rem;
+}
+
+.payment-container .heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333; /* Grayish text color */
+  margin: 10px 0;
+}
+
+.payment-container .text {
+  font-size: 1rem;
+  color: #666; /* Light gray text color */
+  margin: 10px 0;
+}
+
+.payment-container .order-details {
+  font-size: 1rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.payment-container .button {
+  width: 233px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.payment-container .btn {
+  color: #fff;
+  background-color: #6574cd;
+  border-radius: 4px;
+  padding: 10px 24px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color .2s;
+  text-align: center;
+  display: block;
+}
+
+.payment-container .btn:hover {
+  background-color: #5668b7; /* Darker indigo on hover */
+}
+
+span.cart-count {
+  background: #ff5733;
+  text-align: center;
+  padding: 1px 5px 0px 6px !important;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0px -21px 22px 0px;
+  z-index: 999;
+}
