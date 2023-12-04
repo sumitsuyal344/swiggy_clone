@@ -5,7 +5,7 @@ import Header from '../Header/Header'
 const Contact = () => {
     const [avtar, setAvtar] = useState();
 
-    const data = "https://api.github.com/users/ShubhamJoshi1998";
+    const data = "https://api.github.com/users/sumitsuyal344";
     const fetchData = async () => {
         try {
             const response = await fetch(data);
@@ -29,16 +29,16 @@ const Contact = () => {
                         <img
                             src={avtar ? avtar.avatar_url : ""}
                             className="user-profile-image"
-                            alt="Shubham Joshi"
+                            alt="Sumit Suyal"
                         />
                         <div className="user-profile-details text-center">
                             <div className="user-profile-name font-bold">{avtar ? avtar.name : avtar}</div><br />
                             <div>{avtar ? avtar.bio : ""}</div><br />
-                            <div>Dwarka, Delhi</div>
+                            <div>Bhimtal, Nainital</div>
                         </div>
                         <div className="user-profile-links">
                             <a
-                                href="https://github.com/ShubhamJoshi1998"
+                                href="https://github.com/sumitsuyal344"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="user-profile-link mr-3"
@@ -50,7 +50,7 @@ const Contact = () => {
                                 />
                             </a>
                             <a
-                                href="https://www.linkedin.com/in/shubham-joshi-827b66165/"
+                                 href="https://www.linkedin.com/in/sumit-suyal-0bb133208/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="user-profile-link mr-3"
